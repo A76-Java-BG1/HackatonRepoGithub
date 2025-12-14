@@ -23,8 +23,49 @@ public class ArrayHelpers {
 
     }
 
+
+    /**
+     * Copies a range of values from a source array to a specific position in a
+     * destination array.
+     * <p>
+     * This method iterates starting from the {@code destStartIndex} up to and
+     * including the index specified by {@code count}. For each iteration, it assigns
+     * the value from the {@code sourceArray} (incrementing from {@code sourceStartIndex})
+     * to the {@code destinationArray}.
+     * <p>
+     * <b>Note:</b> The {@code count} parameter acts as the inclusive upper bound
+     * index for the destination array, not the number of elements to copy.
+     * The total number of elements copied will be {@code (count - destStartIndex + 1)}.
+     * <p>
+     * Example:
+     * <pre>
+     * int[] src = {10, 20, 30, 40, 50};
+     * int[] dest = {0, 0, 0, 0, 0};
+     * * // Copies src[0] to dest[1], src[1] to dest[2], src[2] to dest[3]
+     * copyFrom(src, 0, dest, 1, 3);
+     * * // dest is now {0, 10, 20, 30, 0}
+     * </pre>
+     *
+     * @param sourceArray      the array to copy from
+     * @param sourceStartIndex the starting index in the source array
+     * @param destinationArray the array to copy to
+     * @param destStartIndex   the starting index in the destination array
+     * @param count            the final index in the destination array (inclusive)
+     * to which data will be copied
+     * @throws NullPointerException      if either array is {@code null}
+     * @throws IndexOutOfBoundsException if copying would cause access of data
+     * outside array bounds
+     * @author Iliyan Urumov
+     */
+
     public static void copyFrom(int[] sourceArray, int sourceStartIndex,
                                 int[] destinationArray, int destStartIndex, int count) {
+
+        for (int i = destStartIndex; i <= count; i++) {
+
+            destinationArray[i] = sourceArray[sourceStartIndex++];
+
+        }
 
     }
 
