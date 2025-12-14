@@ -51,10 +51,10 @@ public class ArrayHelpers {
      * @param destinationArray the array to copy to
      * @param destStartIndex   the starting index in the destination array
      * @param count            the final index in the destination array (inclusive)
-     * to which data will be copied
+     *                         to which data will be copied
      * @throws NullPointerException      if either array is {@code null}
      * @throws IndexOutOfBoundsException if copying would cause access of data
-     * outside array bounds
+     *                                   outside array bounds
      * @author Iliyan Urumov
      */
 
@@ -117,7 +117,7 @@ public class ArrayHelpers {
 
         for (int i = 0; i < source.length; i++) {
 
-            if(target == source[i]){
+            if (target == source[i]) {
                 index = i;
             }
 
@@ -127,14 +127,11 @@ public class ArrayHelpers {
     }
 
     /**
-     Removes all occurrences of a given element in array
+     * Removes all occurrences of a given element in array
      *
-     * @param source the array to check for element to remove
-     *
+     * @param source  the array to check for element to remove
      * @param element the element we should search for in the array and remove all of it occurrences
-     *
      * @return returns new int array without the given element
-     *
      * @author Aleksandar Yordanov
      */
 
@@ -144,7 +141,7 @@ public class ArrayHelpers {
         int resultIndex = 0;
 
         for (int i = 0; i < source.length; i++) {
-            if(source[i] == element){
+            if (source[i] == element) {
                 elementCount++;
             }
         }
@@ -152,7 +149,7 @@ public class ArrayHelpers {
         result = new int[source.length - elementCount];
 
         for (int i = 0; i < source.length; i++) {
-            if(source[i] != element){
+            if (source[i] != element) {
                 result[resultIndex] = source[i];
                 resultIndex++;
             }
@@ -162,13 +159,10 @@ public class ArrayHelpers {
     }
 
     /**
-     Reverse the array
+     * Reverse the array
      *
      * @param arrayToReverse the given array to reverse
-     *
-     *
      * @return returns the reversed array
-     *
      * @author Aleksandar Yordanov
      */
     public static void reverse(int[] arrayToReverse) {
@@ -184,8 +178,36 @@ public class ArrayHelpers {
         }
     }
 
+
+    /**
+     * Retrieves a section of elements from the provided integer array <code>source</code>.
+     *
+     * @param source The source array from which the section will be retrieved
+     * @param startIndex The starting index of the section (inclusive)
+     * @param endIndex The ending index of the section (inclusive)
+     * @return An integer array containing the section of elements from <code>source</code>
+     * @author Iliyan Urumov
+     */
+
     public static int[] section(int[] source, int startIndex, int endIndex) {
-        return new int[1];
+
+        if (startIndex < 0 || startIndex >= source.length - 1 || startIndex > endIndex) {
+            return source;
+        }
+
+        endIndex = Math.min(endIndex,source.length - 1);
+
+        int length = endIndex - startIndex + 1;
+
+        int[] result = new int[length];
+
+
+        for (int i = 0; i < result.length; i++) {
+
+            result[i] = source[startIndex++];
+        }
+
+        return result;
     }
 
 }
