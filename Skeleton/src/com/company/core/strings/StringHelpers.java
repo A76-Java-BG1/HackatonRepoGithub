@@ -101,6 +101,26 @@ public class StringHelpers {
         return null;
     }
 
+    /**
+     * Returns a new string that is the reverse of the specified source string.
+     * <p>
+     * This method iterates through the characters of the source string in reverse
+     * order (from the last character to the first) and concatenates them to
+     * form a new string.
+     * <p>
+     * For example:
+     * <pre>
+     * reverse("Hello") returns "olleH"
+     * reverse("12345") returns "54321"
+     * </pre>
+     *
+     * @param source the String to be reversed
+     * @return a string containing the characters of the {@code source} string
+     * in reverse order, or an empty string if {@code source} is empty
+     * @throws NullPointerException if {@code source} is {@code null}
+     * @author Iliyan Urumov
+     */
+
     public static String reverse(String source) {
 
         String result = "";
