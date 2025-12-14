@@ -3,8 +3,56 @@ package com.company.core.strings;
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
 
+
+    /**
+     * Abbreviates a String using ellipses. This method checks the length of the
+     * source string and truncates it if it exceeds the specified maximum length.
+     * <p>
+     * If the {@code source} string is empty, an empty string is returned.
+     * If the {@code source} string's length is less than {@code maxLength},
+     * the original string is returned without modification.
+     * <p>
+     * If truncation occurs, the returned string will consist of the first
+     * {@code maxLength} characters of the source string, followed by "...",
+     * resulting in a total length of {@code maxLength + 3}.
+     *
+     * @param source    the String to be abbreviated
+     * @param maxLength the maximum number of characters to keep from the original string
+     * before appending the ellipses
+     * @return the abbreviated String, or the original String if it is shorter
+     * than {@code maxLength}
+     * @throws NullPointerException if {@code source} is {@code null}
+     * @author Iliyan Urumov
+     */
+
     public static String abbreviate(String source, int maxLength) {
-        return null;
+
+        if(source.isEmpty()){
+            return "";
+        }
+
+        if(source.length() < maxLength){
+            return source;
+        }
+
+
+        String abbreviatedString = "";
+
+
+        for (int i = 0; i < maxLength; i++) {
+
+            char currentChar = source.charAt(i);
+
+            abbreviatedString += currentChar;
+
+
+        }
+
+
+        abbreviatedString += "...";
+
+
+        return abbreviatedString;
     }
 
     public static String capitalize(String source) {
@@ -12,6 +60,9 @@ public class StringHelpers {
     }
 
     public static String concat(String string1, String string2) {
+
+
+
         return null;
     }
 
@@ -54,6 +105,9 @@ public class StringHelpers {
     }
 
     public static String section(String source, int start, int end) {
+
+
+
         return null;
     }
 
