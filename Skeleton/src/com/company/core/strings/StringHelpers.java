@@ -18,7 +18,7 @@ public class StringHelpers {
      *
      * @param source    the String to be abbreviated
      * @param maxLength the maximum number of characters to keep from the original string
-     * before appending the ellipses
+     *                  before appending the ellipses
      * @return the abbreviated String, or the original String if it is shorter
      * than {@code maxLength}
      * @throws NullPointerException if {@code source} is {@code null}
@@ -27,11 +27,11 @@ public class StringHelpers {
 
     public static String abbreviate(String source, int maxLength) {
 
-        if(source.isEmpty()){
+        if (source.isEmpty()) {
             return "";
         }
 
-        if(source.length() < maxLength){
+        if (source.length() < maxLength) {
             return source;
         }
 
@@ -56,11 +56,12 @@ public class StringHelpers {
     }
 
     public static String capitalize(String source) {
+
+
         return null;
     }
 
     public static String concat(String string1, String string2) {
-
 
 
         return null;
@@ -101,11 +102,19 @@ public class StringHelpers {
     }
 
     public static String reverse(String source) {
-        return null;
+
+        String result = "";
+
+        for (int i = source.length() - 1; i >= 0; i--) {
+
+            result += source.charAt(i);
+        }
+
+
+        return result;
     }
 
     public static String section(String source, int start, int end) {
-
 
 
         return null;
