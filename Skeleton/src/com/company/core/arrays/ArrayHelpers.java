@@ -44,8 +44,42 @@ public class ArrayHelpers {
         return false;
     }
 
+    /**
+     * Returns the index of the last occurrence of the specified element within the
+     * provided array.
+     * <p>
+     * This method iterates through the entire source array to find the target integer.
+     * If the target appears multiple times, the index of the final occurrence is returned.
+     * If the target is not found, the method returns -1.
+     * <p>
+     * Examples:
+     * <pre>
+     * int[] nums = {10, 20, 30, 20, 40};
+     * lastIndexOf(nums, 20) returns 3
+     * lastIndexOf(nums, 99) returns -1
+     * </pre>
+     *
+     * @param source the array of integers to be searched
+     * @param target the integer value to search for
+     * @return the index of the last occurrence of the {@code target} in the
+     * {@code source} array, or -1 if the target is not found
+     * @throws NullPointerException if {@code source} is {@code null}
+     * @author Iliyan Urumov
+     */
+
     public static int lastIndexOf(int[] source, int target) {
-        return 0;
+
+        int index = -1;
+
+        for (int i = 0; i < source.length; i++) {
+
+            if(target == source[i]){
+                index = i;
+            }
+
+        }
+
+        return index;
     }
 
     public static int[] removeAllOccurrences(int[] source, int element) {
