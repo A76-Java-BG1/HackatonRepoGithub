@@ -52,7 +52,27 @@ public class ArrayHelpers {
         return new int[1];
     }
 
+    /**
+     Reverse the array
+     *
+     * @param arrayToReverse the given array to reverse
+     *
+     *
+     * @return returns the reversed array
+     *
+     * @author Aleksandar Yordanov
+     */
     public static void reverse(int[] arrayToReverse) {
+        int[] result = new int[arrayToReverse.length];
+        int resultIndex = 0;
+        for (int i = arrayToReverse.length - 1; i >= 0; i--) {
+            result[resultIndex] = arrayToReverse[i];
+            resultIndex++;
+        }
+
+        for (int i = 0; i < arrayToReverse.length; i++) {
+            arrayToReverse[i] = result[i];
+        }
     }
 
     public static int[] section(int[] source, int startIndex, int endIndex) {
