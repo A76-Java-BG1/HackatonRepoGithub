@@ -78,7 +78,10 @@ public class ArrayHelpers {
     }
 
     public static int[] insert(int[] source, int index, int element) {
-        return new int[1];
+        int[] result = new int[source.length + 1];
+
+
+        return result;
     }
 
     public static boolean isValidIndex(int[] source, int index) {
@@ -123,8 +126,39 @@ public class ArrayHelpers {
         return index;
     }
 
+    /**
+     Removes all occurrences of a given element in array
+     *
+     * @param source the array to check for element to remove
+     *
+     * @param element the element we should search for in the array and remove all of it occurrences
+     *
+     * @return returns new int array without the given element
+     *
+     * @author Aleksandar Yordanov
+     */
+
     public static int[] removeAllOccurrences(int[] source, int element) {
-        return new int[1];
+        int[] result;
+        int elementCount = 0;
+        int resultIndex = 0;
+
+        for (int i = 0; i < source.length; i++) {
+            if(source[i] == element){
+                elementCount++;
+            }
+        }
+
+        result = new int[source.length - elementCount];
+
+        for (int i = 0; i < source.length; i++) {
+            if(source[i] != element){
+                result[resultIndex] = source[i];
+                resultIndex++;
+            }
+        }
+
+        return result;
     }
 
     /**
