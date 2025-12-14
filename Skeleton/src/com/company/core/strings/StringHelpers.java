@@ -134,10 +134,46 @@ public class StringHelpers {
         return result;
     }
 
+
+
+    /**
+     * Extracts a substring from the specified source string, beginning at the
+     * specified {@code start} index and extending to the {@code end} index
+     * (inclusive).
+     * <p>
+     * This method iterates through the source string and collects characters
+     * starting from position {@code start} up to and including position {@code end}.
+     * <p>
+     * Examples:
+     * <pre>
+     * section("Hello World", 0, 4) returns "Hello"
+     * section("012345", 2, 4)      returns "234"
+     * </pre>
+     *
+     * @param source the string containing the section to be extracted
+     * @param start  the beginning index, inclusive
+     * @param end    the ending index, inclusive
+     * @return the specified substring
+     * @throws NullPointerException      if {@code source} is {@code null}
+     * @throws IndexOutOfBoundsException if the {@code start} or {@code end}
+     * indices are negative or larger than the length
+     * of the {@code source} string
+     *
+     * @author Iliyan Urumov
+     */
+
     public static String section(String source, int start, int end) {
 
+        String result = "";
 
-        return null;
+        for (int i = start; i <= end; i++) {
+
+            result += source.charAt(i);
+
+        }
+
+
+        return result;
     }
 
     public static boolean startsWith(String source, char target) {
