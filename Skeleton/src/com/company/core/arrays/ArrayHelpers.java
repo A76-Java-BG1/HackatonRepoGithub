@@ -77,9 +77,32 @@ public class ArrayHelpers {
         return 0;
     }
 
+    /**
+     * Insert a given element at given index in the array
+     *
+     * @param source the array in which we should insert the element
+     *
+     * @param index the index we should put our element in the array
+     *
+     * @param element the element we should on the given index of the array
+     *
+     * @return returns the array with the element inside
+     * @author Aleksandar Yordanov
+     */
+
     public static int[] insert(int[] source, int index, int element) {
         int[] result = new int[source.length + 1];
 
+        for (int i = 0; i < index; i++) {
+            result[i] = source[i];
+        }
+
+        result[index] = element;
+
+        for (int i = index; i < source.length; i++) {
+            result[i + 1] = source[i];
+        }
+        
 
         return result;
     }
