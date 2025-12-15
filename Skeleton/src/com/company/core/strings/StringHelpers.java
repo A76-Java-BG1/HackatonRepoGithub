@@ -80,6 +80,14 @@ public class StringHelpers {
     }
 
     public static boolean contains(String source, char symbol) {
+        char[] sourceToCharArray = source.toCharArray();
+        for (int i = 0; i < sourceToCharArray.length; i++) {
+            char currentSymbol = sourceToCharArray[i];
+            if (symbol == currentSymbol){
+                return true;
+            }
+
+        }
         return false;
     }
 

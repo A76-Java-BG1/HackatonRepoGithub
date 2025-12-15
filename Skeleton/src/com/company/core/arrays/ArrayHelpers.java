@@ -4,8 +4,16 @@ package com.company.core.arrays;
 public class ArrayHelpers {
 
     public static int[] add(int[] source, int element) {
-        return new int[1];
+        int[] array = new int[source.length + 1];
+        for (int i = 0; i < source.length; i++) {
+            array[i] = source[i];
+
+        }
+        array[array.length - 1] = element;
+        return array;
+
     }
+
 
     public static int[] addFirst(int[] source, int element) {
         return new int[1];
@@ -108,8 +116,14 @@ public class ArrayHelpers {
     }
 
     public static boolean isValidIndex(int[] source, int index) {
-        return false;
+        if (index < 0 || index > source.length - 1) {
+            return false;
+        }else {
+            return true;
+        }
+
     }
+
 
     /**
      * Returns the index of the last occurrence of the specified element within the
