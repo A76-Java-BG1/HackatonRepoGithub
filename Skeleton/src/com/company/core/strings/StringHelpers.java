@@ -117,13 +117,67 @@ public class StringHelpers {
         return result;
     }
 
+    /**
+     Adds - sign in the end of the string if the given length is larger than the given string length
+     *
+     * @param source the given string
+     *
+     * @param length the length we should compare with our string length
+     *
+     * @return returns new string with added - signs in the end or the given string input if the string length is larger than the given length
+     *
+     * @author Aleksandar Yordanov
+     */
+
     public static String padEnd(String source, int length, char paddingSymbol) {
-        return null;
+
+        if(length > source.length()){
+            int symbolCount = length - source.length();
+
+            for (int i = 0; i < symbolCount; i++) {
+                source += paddingSymbol;
+            }
+        }
+
+        if(source.length() > length){
+            return source;
+        }
+
+        return source;
     }
 
-    public static String padStart(String source, int length, char paddingSymbol) {
-        return null;
+    /**
+     Adds - sign in at the beginning of the string if the given length is larger than the given string length
+     *
+     * @param source the given string
+     *
+     * @param length the length we should compare with our string length
+     *
+     * @return returns new string with added - signs in the beginning or the given string input if the string length is larger than the given length
+     *
+     * @author Aleksandar Yordanov
+     */
 
+
+    public static String padStart(String source, int length, char paddingSymbol) {
+
+        String result = "";
+        if(length > source.length()){
+            int symbolCount = length - source.length();
+
+            for (int i = 0; i < symbolCount; i++) {
+                result += paddingSymbol;
+            }
+
+
+            result += source;
+        }
+
+        if(source.length() > length){
+            return source;
+        }
+
+        return result;
     }
 
     public static String repeat(String source, int times) {
