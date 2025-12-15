@@ -83,9 +83,38 @@ public class StringHelpers {
         return 0;
     }
 
+    /**
+     Adds - sign in the both sides of the string if the given length is larger than the given string length
+     *
+     * @param source the given string
+     *
+     * @param length the length we should compare with our string length
+     *
+     * @return returns new string with added - signs in both sides or the given string input if the string length is larger than the given length
+     *
+     * @author Aleksandar Yordanov
+     */
     public static String pad(String source, int length, char paddingSymbol) {
-        return null;
+        String result = "";
+        if(length > source.length()){
+            int symbolCount = length - source.length();
 
+            for (int i = 0; i < symbolCount / 2; i++) {
+                result += paddingSymbol;
+            }
+
+            result += source;
+
+            for (int i = 0; i < symbolCount / 2; i++) {
+                result += paddingSymbol;
+            }
+        }
+
+        if(source.length() > length){
+            return source;
+        }
+
+        return result;
     }
 
     public static String padEnd(String source, int length, char paddingSymbol) {
