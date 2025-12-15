@@ -1,5 +1,7 @@
 package com.company.core.strings;
 
+import java.util.Locale;
+
 @SuppressWarnings("StringConcatenationInLoop")
 public class StringHelpers {
 
@@ -57,8 +59,18 @@ public class StringHelpers {
 
     public static String capitalize(String source) {
 
+        if (source.isEmpty()){
+            return "";
+        };
 
-        return null;
+        String subString = source.substring(1, source.length());
+        String firstLetter = String.valueOf(source.toCharArray()[0]).toUpperCase();
+        String result = firstLetter + subString;
+
+
+
+
+        return result;
     }
 
     public static String concat(String string1, String string2) {
